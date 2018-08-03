@@ -5,6 +5,7 @@ export const FORM_RECIPIENT_UPDATE = 'FORM_RECIPIENT_UPDATE';
 
 // Row items
 export const FORM_ITEM_ADD = 'FORM_ITEM_ADD';
+export const FORM_ITEM_ADD_RECURRING = 'FORM_ITEM_ADD_RECURRING';
 export const FORM_ITEM_REMOVE = 'FORM_ITEM_REMOVE';
 export const FORM_ITEM_UPDATE = 'FORM_ITEM_UPDATE';
 export const FORM_ITEM_MOVE = 'FORM_ITEM_MOVE';
@@ -35,6 +36,34 @@ export const INVOICE_DUPLICATE = 'INVOICE_DUPLICATE';
 export const CONTACT_GET_ALL = 'CONTACT_GET_ALL';
 export const CONTACT_DELETE = 'CONTACT_DELETE';
 export const CONTACT_SAVE = 'CONTACT_SAVE';
+
+// ITEMS
+// ===========================================================
+export const ITEM_EDIT = 'ITEM_EDIT';
+export const ITEM_UPDATE = 'ITEM_UPDATE';
+export const ITEM_GET_ALL = 'ITEM_GET_ALL';
+export const ITEM_DELETE = 'ITEM_DELETE';
+export const ITEM_SAVE = 'ITEM_SAVE';
+
+// CATEGORIES
+// ===========================================================
+export const CATEGORY_EDIT = 'CATEGORY_EDIT';
+export const CATEGORY_UPDATE = 'CATEGORY_UPDATE';
+export const CATEGORY_GET_ALL = 'CATEGORY_GET_ALL';
+export const CATEGORY_DELETE = 'CATEGORY_DELETE';
+export const CATEGORY_SAVE = 'CATEGORY_SAVE';
+
+// ITEMFORMS
+// ===========================================================
+export const ITEM_FORMS_ITEM_SAVE = 'ITEM_FORMS_ITEM_SAVE';
+export const ITEM_FORMS_ITEM_TOGGLE = 'ITEM_FORMS_ITEM_TOGGLE';
+export const ITEM_FORMS_ITEM_CLOSE = 'ITEM_FORMS_ITEM_CLOSE';
+export const ITEM_FORMS_CATEGORY_SAVE = 'ITEM_FORMS_CATEGORY_SAVE';
+export const ITEM_FORMS_CATEGORY_TOGGLE = 'ITEM_FORMS_CATEGORY_TOGGLE';
+export const ITEM_FORMS_CATEGORY_CLOSE = 'ITEM_FORMS_CATEGORY_CLOSE';
+export const ITEM_FORMS_FIELD_UPDATE_DATA = 'ITEM_FORMS_FIELD_UPDATE_DATA'
+export const ITEM_FORMS_ITEM_CLEAR = 'ITEM_FORMS_ITEM_CLEAR'
+export const ITEM_FORMS_CATEGORY_CLEAR = 'ITEM_FORMS_CATEGORY_CLEAR'
 
 // SETTINGS
 // ===========================================================

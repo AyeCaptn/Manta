@@ -216,6 +216,9 @@ function setInitialValues() {
         tax: false,
         note: false,
       },
+      recurringItems: {
+        enabled: true,
+      },
     },
   };
 
@@ -273,6 +276,9 @@ function migrateData() {
             discount: false,
             tax: false,
             note: false,
+          },
+          recurringItems: {
+            enabled: true,
           },
         },
       });

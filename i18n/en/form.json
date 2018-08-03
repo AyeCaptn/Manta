@@ -3,6 +3,7 @@
     "new": "Create A New Invoice",
     "edit": "Edit Invoice",
     "btns": {
+      "new": "New",
       "clear": "Clear",
       "update": "Update",
       "saveAndPreview": "Save & Preview"

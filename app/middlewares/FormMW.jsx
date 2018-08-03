@@ -51,13 +51,23 @@ const FormMW = ({ dispatch, getState }) => next => action => {
       );
     }
 
+    case ACTION_TYPES.FORM_ITEM_ADD_EXISTING: {
+      return next(
+        Object.assign({}, action, {
+          payload: Object.assign({}, action.payload, {
+            id: uuidv4()
+          })
+        })
+      );
+    }
+
     case ACTION_TYPES.FORM_CLEAR: {
       // Close Setting Panel
       dispatch(FormActions.closeFormSettings());
       // Clear The Form
       next(action);
       // Create An item
-      dispatch(FormActions.addItem());
+      if (!appConfig.get('invoice').recurringItems.enabled) dispatch(FormActions.addItem());
       break;
     }
 

@@ -1,6 +1,8 @@
 // Setup PouchDB
 const PouchDB = require('pouchdb-browser');
 const contactsDB = new PouchDB('contacts');
+const itemsDB = new PouchDB('items');
+const categoriesDB = new PouchDB('categories');
 const invoicesDB = new PouchDB('invoices');
 
 // Utility
@@ -122,6 +124,12 @@ const setDB = dbName =>
   new Promise((resolve, reject) => {
     if (dbName === 'contacts') {
       resolve(contactsDB);
+    }
+    if (dbName === 'items') {
+      resolve(itemsDB);
+    }
+    if (dbName === 'categories') {
+      resolve(categoriesDB);
     }
     if (dbName === 'invoices') {
       if (alreadyRunInvoiceMigration) {

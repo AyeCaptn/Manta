@@ -14,6 +14,7 @@ import { bindActionCreators } from 'redux';
 // Components
 import Recipient from '../components/form/Recipient';
 import ItemsList from '../components/form/ItemsList';
+import RecurringItemsList from '../components/form/RecurringItemsList';
 import Currency from '../components/form/Currency';
 import Discount from '../components/form/Discount';
 import DueDate from '../components/form/DueDate';
@@ -99,7 +100,9 @@ class Form extends PureComponent {
             />
           )}
           <Recipient />
-          <ItemsList />
+          { savedSettings.recurringItems.enabled
+            ? <RecurringItemsList />
+            : <ItemsList />}
           {required_fields.dueDate && (
             <DueDate
               t={t}

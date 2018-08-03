@@ -44,6 +44,11 @@ const UIMiddleware = ({ getState }) => next => action => {
       return next(action);
     }
 
+    case ACTION_TYPES.FORM_ITEM_ADD_EXISTING: {
+      sounds.play('ADD');
+      return next(action);
+    }
+
     case ACTION_TYPES.FORM_ITEM_REMOVE: {
       sounds.play('REMOVE');
       return next(action);

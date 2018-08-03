@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly to the DOM matches snapshot 1`] = `
+<tr
+  className="Table__TRStyle-gHmqLx BngTM"
+>
+  <td
+    className="Table__TDStyle-cAmfHP hlnQVD"
+  >
+    Description of the product/service
+  </td>
+  <td
+    className="Table__TDStyle-cAmfHP jrRCak"
+  >
+    12.3
+  </td>
+  <td
+    className="Table__TDStyle-cAmfHP evw"
+  >
+    <button
+      className="Button__ButtonLinkStyle-caVwCA lhMtRH"
+      onClick={[Function]}
+    >
+      <i
+        className="ion-edit"
+      />
+    </button>
+    <button
+      className="Button__ButtonLinkStyle-caVwCA gvxXrI"
+      onClick={[Function]}
+    >
+      <i
+        className="ion-close-circled"
+      />
+    </button>
+  </td>
+</tr>
+`;

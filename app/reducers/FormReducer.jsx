@@ -40,6 +40,7 @@ const initialState = {
     tax: invoiceSettings.tax,
     currency: invoiceSettings.currency,
     required_fields: invoiceSettings.required_fields,
+    recurringItems: invoiceSettings.recurringItems,
   },
 };
 
@@ -54,6 +55,12 @@ const FormReducer = handleActions(
       Object.assign({}, state, {
         rows: [...state.rows, action.payload],
       }),
+
+    [ACTION_TYPES.FORM_ITEM_ADD_RECURRING]: (state, action) =>
+      Object.assign({}, state, {
+        rows: [...state.rows, action.payload],
+      }),
+
 
     [ACTION_TYPES.FORM_ITEM_REMOVE]: (state, action) =>
       Object.assign({}, state, {
@@ -173,6 +180,7 @@ const FormReducer = handleActions(
           tax: invoiceSettings.tax,
           currency: invoiceSettings.currency,
           required_fields: invoiceSettings.required_fields,
+          recurringItems: invoiceSettings.recurringItems,
         }),
       });
     },

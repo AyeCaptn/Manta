@@ -1,0 +1,10 @@
+{
+    "header": "All Items",
+    "fields": {
+        "name": "Name",
+        "description": "Description",
+        "price": "Price",
+        "actions": "Actions"
+    }
+}
+  

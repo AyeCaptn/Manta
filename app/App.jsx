@@ -10,6 +10,9 @@ import * as FormActions from './actions/form';
 import * as SettingsActions from './actions/settings';
 import * as InvoicesActions from './actions/invoices';
 import * as ContactsActions from './actions/contacts';
+import * as ItemsActions from './actions/items';
+import * as CategoriesActions from './actions/categories';
+import * as ItemFormsActions from './actions/itemForms';
 
 // Components
 import AppNav from './components/layout/AppNav';
@@ -30,6 +33,8 @@ class App extends PureComponent {
     const { dispatch } = this.props;
     // Get All Data
     dispatch(ContactsActions.getAllContacts());
+    dispatch(ItemsActions.getItems());
+    dispatch(CategoriesActions.getAllCategories());
     dispatch(InvoicesActions.getInvoices());
     dispatch(SettingsActions.getInitalSettings());
     // Add Event Listener
@@ -100,7 +105,7 @@ class App extends PureComponent {
     const { activeTab, notifications, checkUpdatesMessage } = this.props.ui;
     return (
       <AppWrapper>
-        <AppNav activeTab={activeTab} changeTab={this.changeTab} />
+        <AppNav activeTab={activeTab} changeTab={this.changeTab} recurringItemsEnabled={this.props.recurringItemsEnabled} />
         <AppMain activeTab={activeTab} />
         <AppNoti notifications={notifications} removeNoti={this.removeNoti} />
       </AppWrapper>
@@ -115,8 +120,10 @@ App.propTypes = {
     notifications: PropTypes.array.isRequired,
     checkUpdatesMessage: PropTypes.object,
   }).isRequired,
+  recurringItemsEnabled: PropTypes.object.isRequired,
 };
 
 export default connect(state => ({
   ui: state.ui,
+  recurringItemsEnabled: false,
 }))(App);

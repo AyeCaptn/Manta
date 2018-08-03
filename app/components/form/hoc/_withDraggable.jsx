@@ -10,6 +10,9 @@ const _withDraggable = ComposedComponent => props => (
         if (event.target.nodeName === 'INPUT') {
           return;
         }
+        if (event.target.nodeName === 'SELECT') {
+          return;
+        }
         provided.dragHandleProps.onMouseDown(event);
       };
       // Patched onKeyDown handler, make typing in inputs
@@ -17,6 +20,9 @@ const _withDraggable = ComposedComponent => props => (
       // as normal characters instead of a shortcut.
       const onKeyDown = event => {
         if (event.target.nodeName === 'INPUT') {
+          return;
+        }
+        if (event.target.nodeName === 'SELECT') {
           return;
         }
         provided.dragHandleProps.onKeyDown(event);

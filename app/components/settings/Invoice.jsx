@@ -11,6 +11,7 @@ import Currency from './_partials/invoice/Currency';
 import Fields from './_partials/invoice/Fields';
 import Other from './_partials/invoice/Other';
 import Tax from './_partials/invoice/Tax';
+import RecurringItems from './_partials/invoice/RecurringItems';
 
 // Component
 class Invoice extends Component {
@@ -21,6 +22,7 @@ class Invoice extends Component {
     this.handleTaxChange = this.handleTaxChange.bind(this);
     this.handleCurrencyChange = this.handleCurrencyChange.bind(this);
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
+    this.handleRecurringItemsChange = this.handleRecurringItemsChange.bind(this);
   }
 
   componentDidMount() {
@@ -102,6 +104,22 @@ class Invoice extends Component {
     );
   }
 
+  handleRecurringItemsChange(event) {
+    const target = event.target;
+    const name = target.name;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState(
+      {
+        recurringItems: Object.assign({}, this.state.recurringItems, {
+          [name]: value,
+        }),
+      },
+      () => {
+        this.props.updateSettings('invoice', this.state);
+      }
+    );
+  }
+
   selectExportDir() {
     ipc.send('select-export-directory');
   }
@@ -115,6 +133,7 @@ class Invoice extends Component {
       tax,
       required_fields,
       dateFormat,
+      recurringItems,
     } = this.state;
     return [
       <Fields
@@ -143,7 +162,13 @@ class Invoice extends Component {
         handleInputChange={this.handleInputChange}
         selectExportDir={this.selectExportDir}
         t={t}
-      />
+      />,
+      <RecurringItems
+        key="recurring_items_settings"
+        recurringItems={recurringItems}
+        handleRecurringItemsChange={this.handleRecurringItemsChange}
+        t={t}
+      />,
     ];
   }
 }

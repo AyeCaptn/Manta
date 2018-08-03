@@ -10,6 +10,11 @@ export const updateRecipient = createAction(
 // ItemsRow
 export const addItem = createAction(ACTION_TYPES.FORM_ITEM_ADD);
 
+export const addRecurringItem = createAction(
+  ACTION_TYPES.FORM_ITEM_ADD_RECURRING
+);
+
+
 export const removeItem = createAction(
   ACTION_TYPES.FORM_ITEM_REMOVE,
   itemID => itemID

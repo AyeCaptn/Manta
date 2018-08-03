@@ -31,6 +31,10 @@
     "title": "Delete this contact?",
     "message": "The contact will be removed permanently from the database"
   },
+  "deleteItem": {
+    "title": "Delete this item?",
+    "message": "The item will be removed permanently from the database"
+  },
   "fileTypeErr": {
     "title": "Please choose another file"
   },

@@ -35,6 +35,11 @@ const allTabs = [
     icon: 'ion-person-stalker',
   },
   {
+    title: 'Items',
+    name: 'items',
+    icon: 'ion-pricetag',
+  },
+  {
     title: 'Settings',
     name: 'settings',
     icon: 'ion-ios-gear',
@@ -79,6 +84,7 @@ export const Icon = styled.i`
   ${props => props.id === 'contacts' && `color: #469fe5;`};
   ${props => props.id === 'settings' && `color: #C4C8CC;`};
   ${props => props.id === 'invoices' && `color: #cbc189;`};
+  ${props => props.id === 'items' && `color: #db6d06;`};
 `;
 
 export const ActiveIndicator = styled.div`
@@ -95,9 +101,10 @@ export const ActiveIndicator = styled.div`
 
 import AppUpdate from './AppUpdate';
 
-function AppNav({ activeTab, changeTab }) {
+function AppNav({ activeTab, changeTab, recurringItemsEnabled }) {
   const marginTopValue = setMarginValue(activeTab);
-  const allTabsComponent = allTabs.map(tab => (
+  const enabledTabs = recurringItemsEnabled ? allTabs : allTabs.filter((tab, ix) => ix !== 3);
+  const allTabsComponent = enabledTabs.map(tab => (
     <Tab key={tab.name} href="#" onClick={() => changeTab(tab.name)}>
       <Icon id={tab.name} className={tab.icon} />
     </Tab>
@@ -127,6 +134,7 @@ function AppNav({ activeTab, changeTab }) {
 AppNav.propTypes = {
   activeTab: PropTypes.string.isRequired,
   changeTab: PropTypes.func.isRequired,
+  recurringItemsEnabled: PropTypes.bool.isRequired,
 };
 
 export default AppNav;

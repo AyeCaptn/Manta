@@ -1,6 +1,7 @@
 {
   "noContact": "You don't have any contact yet",
   "noInvoice": "You haven't created any invoice yet",
+  "noItem": "You haven't created any item yet",
   "invoice": {
     "saved": "Invoice saved successfully",
     "updated": "Invoice updated successfully",
@@ -12,5 +13,10 @@
   },
   "settings": {
     "saved": "All settings have been saved successfully"
+  },
+  "item": {
+    "saved": "Item saved successfully",
+    "updated": "Item updated successfully",
+    "deleted": "Item deleted successfully"
   }
 }
